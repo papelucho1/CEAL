@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% block title%}
+    <head>
+        <meta charset="UTF-8">
+        <title>CEAL</title>
+        <h2>Feedback de resultados</h3>
+        <h1>ESTILOS Y EFECTIVIDAD DE LIDERAZGO</h1>
+    </head>
+    {%endblock%}
+
+    <body>
+        <h3>ok {{person.nombre}} aquí estan tus resultados del {{person.fecha}}</h3>
+        
+        
+        <h4> total efectividad -> {{feedback.total_efectividad}}</h4> 
+        <h4> total estilo -> {{feedback.total_estilos}}  </h4> 
+        <h4> efectividad del estilo  -> {{feedback.efectividad_del_estilo}} </h4> 
+
+
+            <table>
+                <tr>
+                    <td><strong>Estilos</strong></td>
+                    <td><strong>Predominio</strong></td>
+                    <td><strong>Efectividad</strong></td>
+                </tr>
+
+                <tr>
+                    <td>Autocratico</td>
+                    <td>{{count_estilo1}}</td>
+                    <td>{{count_efectividad1}}</td>
+                </tr>
+
+                <tr>
+                    <td>Integrado</td>
+                    <td>{{count_estilo2}}</td>
+                    <td>{{count_efectividad2}}</td>
+                </tr>
+
+                <tr>
+                    <td>Relacionado</td>
+                    <td>{{count_estilo3}}</td>
+                    <td>{{count_efectividad3}}</td>
+                </tr>
+                 <tr>
+                    <td>Sepearado</td>
+                    <td>{{count_estilo4}}</td>
+                    <td>{{count_efectividad4}} </td>
+                </tr>
+                <tr>
+                    <td>Efectividad General</td>
+                    <td></td>
+                </tr>
+            </table>
+
+    </body>
+
+</html>

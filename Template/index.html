@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% block title%}
+    <head>
+        <meta charset="UTF-8">
+        <title>CEAL</title>
+        <h1>CUESTIONARIO DE LA EFECTIVIDAD Y ADAPTABILIDAD DEL LIDER (CEAL)</h1>
+    </head>
+    {%endblock%}
+
+    
+    <body>
+        {%block content %}
+            <h4>Instrucciones</h4>
+            <p> - Esta prueba consta de 12 situaciones.</br>
+
+                - LEA cada situación atentamente y piense lo que Ud. haría en cada circunstancia.</br>
+
+                - MARQUE en su hoja de respuesta la letra de la alternativa que, según Ud., describe mejor su comportamiento en la situación que se presenta.</br>
+
+                - MARQUE SOLO UNA ALTERNATIVA</br>
+
+                - Debe marcar la elección para cada situación en la hoja de respuestas, colocando la letra A,B,C ó D que, según su opinión, describe </br>mejor su comportamiento de líder.  
+                Escriba la letra correspondiente en los casilleros superiores numerados del 1 al 12.</br>
+
+                - No deje ninguna pregunta sin responder.</br>
+
+                - Responda con sinceridad y espontaneidad.</br>
+
+                - Es una prueba sin tiempo</br>
+           </p>
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{formAddPerson}}
+                <input type="submit" value="Iniciar Test" >                              
+            </form>                  
+        {% endblock %}
+    </body>
+    
+</html>

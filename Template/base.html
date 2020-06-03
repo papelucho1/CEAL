@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'index.html'%}
+    
+
+<body>
+    {%block content %}
+        
+        <h2> Hey {{person.nombre}}, recuerda responder con sinceridad, tomate tu tiempo para leer y responder.</h2>
+       <form action="" method="POST"> {% csrf_token %}                
+            
+            {% for question in questions %}
+                <h3>{{question.id_pregunta}} - {{question.encabezado}}</h3>
+                {% for answer in answers %}
+                    {% if answer.id_pregunta_id == question.id_pregunta %}
+                        <div class="form-group">                            
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id= "answerRadio" name= "{{question.id_pregunta}}" class="custom-control-input" value = "{{answer.id_alternativa}}" checked  = false>
+                                <label class="custom-control-label" for={{question.id_pregunta}}>{{answer.letter_alternative}}) {{answer.respuesta}}</label>
+                            </div>
+                        </div>        
+                    {% endif %}               
+                {% endfor %} 
+            {% endfor %}     
+           
+            <input type="submit" value="Finalizar Test" >    
+        </form>
+        {% endblock %}
+        <script type = "text/javascript" src = "static/animation.js" ></script>
+
+</body>
+</html>
+
+
+
